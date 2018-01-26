@@ -17,7 +17,6 @@ void pass(int cur, int pos, int mo, int ja)
 {
 	if (cur == c + 1)
 		return;
-	//printf("cur = %d pos = %d mo = %d ja = %d \n", cur, pos, mo, ja);
 
 	if (pos == l)
 	{
@@ -38,7 +37,6 @@ void pass(int cur, int pos, int mo, int ja)
 	else
 		ja--;
 	pass(cur + 1, pos, mo, ja);
-	 
 }
 
 int main(void)
@@ -49,9 +47,8 @@ int main(void)
 		scanf("%c ", &ary[i]);
 
 	sort(ary, ary + c);
-	//chk[0] = chk[4] = chk[8] = chk[14] = chk[20] = true;
-	pass(0, 0, 0, 0);
 
+	pass(0, 0, 0, 0);
 
 	return 0;
 }
