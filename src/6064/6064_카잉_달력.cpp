@@ -13,15 +13,13 @@ int add(int a, int b, int c)
 		return (a + b) % c;
 }
 
-void calendar(int a, int b, int c, int d)
+void calendar(int a, int b, int c, int d) // x, y 중 작은 값을 기준으로 계산한다.
 {
-	//printf("a %d b %d c %d d %d \n", a, b, c, d);
 	ary[a] = 1;
 	res = a;
 	int next = add(a, b, d);
 	if (ary[next] == 0)
 	{
-		//ary[next] = 1;
 		res += b;
 		if (next == c)
 		{
@@ -29,14 +27,13 @@ void calendar(int a, int b, int c, int d)
 			return;
 		}
 	}
-	//printf("%d %d \n", next, res);
 
 	while (ary[next] == 0)
 	{
 		ary[next] = 1;
 		next = add(next, b, d);
 		res += b;
-		//printf("%d %d \n", next, res);
+
 		if (next == c)
 		{
 			printf("%d \n", res);
@@ -66,40 +63,13 @@ int main(void)
 		else
 			flag = 2;
 
-		/*for (int i = 1; i <= 40000; i++)
-		{
-			if (i == x && i == y)
-			{
-				flag = 3;
-				break;
-			}
-			else if (i == x)
-			{
-				flag = 1;
-				break;
-			}
-			else if (i == y)
-			{
-				flag = 2;
-				break;
-			}
-		}*/
-		//printf("%d\n", flag);
-
 		if (flag == 1)
 			calendar(x, m, y, n);
 		else if (flag == 2)
 			calendar(y, n, x, m);
 		else
 			printf("%d \n", x);
-
 	}
-	//printf("%d \n", add(7, 3, 10));
-
-	//for (int i = 1; i <= 33; i++)
-	//{
-//		printf("add %d \n", add(0, i, 10));
-//	}
 
 	return 0;
 }
