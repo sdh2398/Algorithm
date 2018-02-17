@@ -1,9 +1,7 @@
 #include <iostream>
-//#include <vector>
 using namespace std;
 
 int mnum, msum, flag;
-//vector<int> prime;
 int ary[10002];
 
 int main(void)
@@ -22,8 +20,6 @@ int main(void)
 			}
 			if (m <= i && i <= n)
 				msum += i;
-
-			//prime.push_back(i);
 
 			for (int j = i; j <= n; j += i)
 				ary[j] = 1;
